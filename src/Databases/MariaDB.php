@@ -13,15 +13,13 @@
 			try {
 				Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'], '.mariadb')->load();
 	
-				$dns = sprintf("mysql:host=%s;dbname=%s", $_ENV['HOST'], $_ENV['DATABASE']);
+				$dns = sprintf("mysql:host=%s;dbname=%s;charset=%s;port=%s", $_ENV['HOST'], $_ENV['DATABASE'], $_ENV['CHARSET'], $_ENV['PORT']);
 
-				$options = [
-					PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"
-				];
+				$options = [];
 
 				$this->link = new PDO($dns, $_ENV['USERNAME'], $_ENV['PASSWORD'], $options);
-			} catch (PDOException $e) {
-				error_log(print_r($e->getMessage(), true), 3, $_SERVER['DOCUMENT_ROOT'] . '/logger/mariadb.log');
+			} catch(PDOException $e) {
+				error_log(print_r($e->getMessage() . "\n", true), 3, $_SERVER['DOCUMENT_ROOT'] . '/logger/mariadb.log');
 			}
 		}
 
