@@ -1,0 +1,4 @@
+HOST=localhost
+DATABASE=slimphp
+USERNAME=teapod
+PASSWORD=123456789
