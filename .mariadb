@@ -1,5 +1,5 @@
 HOST=localhost
-DATABASE=slimphp
+DATABASE=framework
 CHARSET=utf8mb4
 PORT=3306
 USERNAME=teapod

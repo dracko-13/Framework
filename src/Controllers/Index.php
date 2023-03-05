@@ -14,7 +14,7 @@
 		public function index($request, $response, $args) {
 			session_start();
 
-			$_SESSION['logged_in'] = false;
+			$_SESSION['logged_in'] = true;
 
 			$view = Twig::fromRequest($request);
 
