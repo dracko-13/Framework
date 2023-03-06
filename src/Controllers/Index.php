@@ -22,6 +22,8 @@
 				'app_name' => 'Index'
 			];
 
+			d($args);
+
 			return $view->render($response, 'index.php', $data);
 		}
 

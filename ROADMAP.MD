@@ -2,12 +2,12 @@ VIEWS
 
 	index.php
 	
-	/signin
-	/signup
-	/signout
-	/reset_password
-
-	/dashboard
+		/signin
+		/signup
+		/signout
+		/reset_password
+	
+		/dashboard
 
 CONTROLLERS
 
